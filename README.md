@@ -15,3 +15,7 @@ vim .env
  DB_PASSWORD=
  
 php artisan migrate
+
+docker-compose run node npm install
+
+docker-compose run node npm run dev
