@@ -33,25 +33,27 @@ services:
     volumes:
       - ./db:/var/lib/mysql
 
-  phpmyadmin:
-    image: phpmyadmin/phpmyadmin
-    environment:
-      - PMA_ARBITRARY=1
-      - PMA_HOST=mysql
-      - PMA_USER=root
-      - PMA_PASSWORD=password
-    links:
-      - mysql
-    ports:
-      - 8080:80
-    volumes:
-      - /sessions
+# #  Option1 - use phpmyadmin
+  # phpmyadmin:
+  #   image: phpmyadmin/phpmyadmin
+  #   environment:
+  #     - PMA_ARBITRARY=1
+  #     - PMA_HOST=mysql
+  #     - PMA_USER=root
+  #     - PMA_PASSWORD=password
+  #   links:
+  #     - mysql
+  #   ports:
+  #     - 8080:80
+  #   volumes:
+  #     - /sessions
 
-  node:  
-    image: node:lts
-    volumes:
-        - ./app/laravel:/var/www
-    working_dir: /var/www
+# #  Option2 - use node
+  # node:  
+  #   image: node:lts
+  #   volumes:
+  #       - ./app/laravel:/var/www
+  #   working_dir: /var/www
 
 volumes:
   db:
