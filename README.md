@@ -54,6 +54,8 @@ DB_PASSWORD=password
 php artisan migrate
 ```
 7. you can access laravel8-home via your-host-ipaddres:8000
+<br>
+
 ![laravel home](https://user-images.githubusercontent.com/53518005/101989215-72653980-3cd1-11eb-9a3e-5163ff8e780e.PNG)
 
 <br>
