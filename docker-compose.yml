@@ -48,7 +48,7 @@ services:
   #   volumes:
   #     - /sessions
 
-# #  Option2 - use node
+# #  Option2 - use npm
   # node:  
   #   image: node:lts
   #   volumes:

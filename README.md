@@ -1,82 +1,49 @@
-# **docker-template-laravel** 
+# **docker-template** 
 
 <br>
 
 ## **About**
-
-<br>
-
-You can create plane laravel8 environment on your docker-container.
-
-<br>
+You can create lemp environment on your docker-container.
 
 ## **Inside Package**
-
-<br>
-
  * web nginx:latest
  * app php:7.3-fpm
  * db  mysql:5.7
  * phpmyadmin (Option1)
  * node node:lts (Option2)
 
-<br>
-
 ## **How to use**
 
-<br>
+1. clone the repository & run docker-compose up
 
-1. clone the repository
 ```
-git clone xxxx
-```
-2. docker-compose up
-```
+git clone https://github.com/siwai0208/docker-template-laravel
 docker-compose up
 ```
-3. docker-compose exec app composer create-project --prefer-dist laravel/laravel
-```
-docker-compose exec app composer create-project --prefer-dist laravel/laravel
-```
-4. docker-compose exec app bash
-```
-docker-compose exec app bash
-```
-5. cd laravel and revice .env file
-```
-DB_HOST=mysql
-DB_DATABASE=laravel
-DB_USERNAME=root
-DB_PASSWORD=password
-```
-6. php artisan migrate
-```
-php artisan migrate
-```
-7. you can access laravel8-home via your-host-ipaddres:8000
-<br>
 
-![laravel home](https://user-images.githubusercontent.com/53518005/101989215-72653980-3cd1-11eb-9a3e-5163ff8e780e.PNG)
-
-<br>
+2. confirm container status by docker-ompose ps
+```
+docker-compose ps
+Name                        Command               State                 Ports              
+----------------------------------------------------------------------------------------------------
+docker-template_app_1     docker-php-entrypoint php-fpm    Up      9000/tcp                         
+docker-template_mysql_1   docker-entrypoint.sh mysqld      Up      0.0.0.0:3306->3306/tcp, 33060/tcp
+docker-template_web_1     /docker-entrypoint.sh ngin ...   Up      0.0.0.0:8000->80/tcp    
+```
 
 ### **Option1: use phpmyadmin**:
  
-<br>
-
  1. uncomment "phpmyadmin" section (line 37-49) in docker-compose.yml file
  2. restart docker-compose
  3. you can access phpmyadmin via your-host-ipaddres:8080
 
-<br>
-
 ### **Option2: use npm for scss->css compile**
-
-<br>
 
  1. uncomment "node" section (line 52-56) in docker-compose.yml file
  2. restart docker-compose
  3. docker-compose run node npm install
  4. docker-compose run node npm run dev
 
-<br>
+## **RUN Laravel Application**
+
+ - [Laravel8を用いたECサンプルアプリ](https://github.com/siwai0208/food-app)
